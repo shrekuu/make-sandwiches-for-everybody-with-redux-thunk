@@ -1,3 +1,14 @@
+## Make Sandwiches for Everybody(demo app according to [redux-thunk](https://github.com/reduxjs/redux-thunk readme.md))
+
+Run `npm start` in the project directory.
+
+Install the redux devtools to view actions dispatched from console.
+https://github.com/zalmoxisus/redux-devtools-extension
+
+![screenshot](./screenshot.gif)
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
