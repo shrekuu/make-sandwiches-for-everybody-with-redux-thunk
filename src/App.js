@@ -1,28 +1,32 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { connect } from 'react-redux'
+import React, { Component } from 'react'
+import { makeASandwichWithSecretSauce, makeSandwichesForEverybody } from './store/actions'
+
 
 class App extends Component {
+  componentDidMount() {
+    this.props.dispatch(
+      // make only one sandwich for me
+      // makeASandwichWithSecretSauce(this.props.forPerson)
+
+      // make everybody a sandwich
+      makeSandwichesForEverybody()
+    )
+  }
+
   render() {
+    const sandwiches = this.props.sandwiches.sandwiches.map((v, k) =>
+      <li key={k.toString()}>{v}</li>
+    )
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
+      <ol>{sandwiches}</ol>
+    )
   }
 }
 
-export default App;
+export default connect(
+  state => ({
+    sandwiches: state.sandwiches,
+    forPerson: 'me :D'
+  })
+)(App)
