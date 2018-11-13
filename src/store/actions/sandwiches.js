@@ -3,7 +3,7 @@ import { MAKE_SANDWICH, APOLOGIZE, WITHDRAW } from '../types'
 export function fetchSecretSauce() {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve('pepper')
+            resolve('Döner Kebab')
         }, 1000)
     })
 }

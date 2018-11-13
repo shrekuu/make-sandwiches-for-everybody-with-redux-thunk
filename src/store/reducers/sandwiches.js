@@ -4,7 +4,7 @@ import { MAKE_SANDWICH, APOLOGIZE, WITHDRAW } from '../types'
 export default handleActions({
   [MAKE_SANDWICH](state, action) {
     console.log(MAKE_SANDWICH, state, action)
-    const newSandwich = `${action.secretSauce} ' sandwich for ${action.forPerson}`
+    const newSandwich = `${action.secretSauce} sandwich for ${action.forPerson}`
     return {
       ...state,
       sandwiches: [...state.sandwiches, newSandwich]
